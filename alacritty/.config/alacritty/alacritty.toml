@@ -57,7 +57,7 @@ dimensions.lines = 45
 position.x = 75
 position.y = 90
 decorations = "buttonless"
-opacity = 0.9
+opacity = 0.85
 blur = true
 startup_mode = "Windowed"
 

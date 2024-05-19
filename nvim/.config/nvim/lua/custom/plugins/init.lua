@@ -1,19 +1,20 @@
 return {
   -- Git related plugins
   {
-    'NeogitOrg/neogit',
-    keys = {
-      {
-        '<leader>gs',
-        '<CMD>Neogit<CR>',
-        desc = 'Open Neogit',
-      },
+    'kdheepak/lazygit.nvim',
+    lazy = true,
+    cmd = {
+      'LazyGit',
+      'LazyGitConfig',
+      'LazyGitCurrentFile',
+      'LazyGitFilter',
+      'LazyGitFilterCurrentFile',
     },
     dependencies = {
-      'nvim-lua/plenary.nvim', -- required
-      'sindrets/diffview.nvim',
-
-      'ibhagwan/fzf-lua',
+      'nvim-lua/plenary.nvim',
+    },
+    keys = {
+      { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
 
