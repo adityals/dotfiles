@@ -2,7 +2,6 @@
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
-
 local set = vim.keymap.set
 
 set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
