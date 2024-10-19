@@ -6,15 +6,14 @@
 local set = vim.keymap.set
 
 set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-set({ 'n', 'v' }, '<leader>y', [["+y]])
-set('n', '<leader>Y', [["+Y]])
+set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = '[y]ank to clipboard' })
+set('n', '<leader>Y', [["+Y]], { desc = '[Y]ank to clipboard' })
 
-set("v", "J", ":m '>+1<CR>gv=gv")
-set("v", "K", ":m '<-2<CR>gv=gv")
-set("n", "<C-k>", "<cmd>cnext<CR>zz")
-set("n", "<C-j>", "<cmd>cprev<CR>zz")
-set("n", "J", "msJ`z")
-set("n", "q", "<nop>")
+set('v', 'J', ":m '>+1<CR>gv=gv")
+set('v', 'K', ":m '<-2<CR>gv=gv")
+set('n', '<C-k>', '<cmd>cnext<CR>zz')
+set('n', '<C-j>', '<cmd>cprev<CR>zz')
+set('n', 'J', 'msJ`z')
 
 -- Remap for dealing with word wrap
 set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })

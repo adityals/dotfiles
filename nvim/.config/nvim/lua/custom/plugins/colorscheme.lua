@@ -1,12 +1,10 @@
 return {
-  "folke/tokyonight.nvim",
-  lazy = false,
+  'rebelot/kanagawa.nvim',
   priority = 1000,
-  opts = {
-    transparent = true
-  },
-  init = function()
-    vim.cmd.colorscheme "tokyonight-moon"
-    vim.cmd.hi 'Comment gui=none'
-  end
+  config = function()
+    require('kanagawa').setup {
+      transparent = true,
+    }
+    vim.cmd 'colorscheme kanagawa-dragon'
+  end,
 }

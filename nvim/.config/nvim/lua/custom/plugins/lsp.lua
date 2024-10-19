@@ -8,7 +8,7 @@ return {
 
     -- Useful status updates for LSP
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { 'j-hui/fidget.nvim',       opts = {} },
+    { 'j-hui/fidget.nvim', opts = {} },
 
     -- Additional lua configuration, makes nvim stuff amazing!
     'folke/neodev.nvim',
@@ -86,10 +86,18 @@ return {
 
       lua_ls = {
         Lua = {
-          workspace = { checkThirdParty = false },
+          runtime = { version = 'LuaJIT' },
+          workspace = {
+            library = {
+              ['/opt/homebrew/share/lua/5.4/'] = true,
+              ['/opt/homebrew/lib/lua/5.4/'] = true,
+            },
+            checkThirdParty = false,
+          },
           telemetry = { enable = false },
           -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
           -- diagnostics = { disable = { 'missing-fields' } },
+          diagnostics = { globals = { 'vim' } },
         },
       },
     }
@@ -105,15 +113,34 @@ return {
       ensure_installed = vim.tbl_keys(servers),
     }
 
+    local get_root_dir = function(fname)
+      local util = require 'lspconfig.util'
+      return util.root_pattern '.git'(fname)
+    end
+
+    local lspconfig = require 'lspconfig'
+
     mason_lspconfig.setup_handlers {
       function(server_name)
-        require('lspconfig')[server_name].setup {
+        lspconfig[server_name].setup {
           capabilities = capabilities,
           on_attach = on_attach,
           settings = servers[server_name],
           filetypes = (servers[server_name] or {}).filetypes,
         }
       end,
+      ['tsserver'] = function()
+        lspconfig.tsserver.setup {
+          root_dir = get_root_dir,
+          on_attach = on_attach,
+        }
+      end,
+      ['eslint'] = function()
+        lspconfig.eslint.setup {
+          root_dir = get_root_dir,
+          on_attach = on_attach,
+        }
+      end,
     }
-  end
+  end,
 }
