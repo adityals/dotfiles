@@ -1,5 +1,6 @@
 return {
   'folke/which-key.nvim',
+  event = 'VimEnter', -- https://github.com/nvim-lua/kickstart.nvim/blob/2ba39c69736597b60f6033aa3f8526e7c28343d5/init.lua#L276
   opts = {},
   config = function()
     -- document existing key chains
@@ -19,5 +20,5 @@ return {
       ['<leader>'] = { name = 'VISUAL <leader>' },
       ['<leader>h'] = { 'Git [H]unk' },
     }, { mode = 'v' })
-  end
+  end,
 }

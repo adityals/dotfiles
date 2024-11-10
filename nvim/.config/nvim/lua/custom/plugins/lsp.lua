@@ -1,6 +1,8 @@
 return {
   -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
+  event = { 'VeryLazy' }, -- https://www.lazyvim.org/plugins/lsp#nvim-lspconfig
+  lazy = vim.fn.argc(-1) == 0, -- load lsp early when opening a file from the cmdline
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
     { 'williamboman/mason.nvim', config = true },
@@ -39,12 +41,13 @@ return {
         vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' } } }
       end, '[C]ode [A]ction')
 
-      nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-      nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-      nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-      nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-      nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-      nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+      local fzflua = require 'fzf-lua'
+      nmap('gd', fzflua.lsp_definitions, '[G]oto [D]efinition')
+      nmap('gr', fzflua.lsp_references, '[G]oto [R]eferences')
+      nmap('gI', fzflua.lsp_implementations, '[G]oto [I]mplementation')
+      nmap('<leader>td', fzflua.lsp_typedefs, 'Type [D]efinition')
+      nmap('<leader>ds', fzflua.lsp_document_symbols, '[D]ocument [S]ymbols')
+      nmap('<leader>ws', fzflua.lsp_workspace_symbols, '[W]orkspace [S]ymbols')
 
       -- See `:help K` for why this keymap
       nmap('K', vim.lsp.buf.hover, 'Hover Documentation')

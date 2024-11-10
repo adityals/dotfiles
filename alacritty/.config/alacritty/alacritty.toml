@@ -3,7 +3,7 @@ size = 15
 
 # font-jetbrains-mono-nerd-font
 normal.family = "JetBrainsMono Nerd Font"
-normal.style = "Medium"
+normal.style = "SemiBold"
 
 bold.family = "JetBrainsMono Nerd Font"
 bold.style = "Bold"
@@ -57,7 +57,7 @@ dimensions.lines = 45
 position.x = 75
 position.y = 130
 decorations = "buttonless"
-opacity = 0.8
+opacity = 0.9
 blur = true
 startup_mode = "Windowed"
 

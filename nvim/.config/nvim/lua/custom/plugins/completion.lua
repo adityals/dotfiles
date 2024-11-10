@@ -1,6 +1,7 @@
-return   {
+return {
   -- Autocompletion
   'hrsh7th/nvim-cmp',
+  event = 'InsertEnter', -- https://github.com/hrsh7th/nvim-cmp/issues/65
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
     {
@@ -26,7 +27,7 @@ return   {
     -- Adds a number of user-friendly snippets
     'rafamadriz/friendly-snippets',
   },
-  config = function ()
+  config = function()
     -- [[ Configure nvim-cmp ]]
     -- See `:help cmp`
     local cmp = require 'cmp'
@@ -79,6 +80,5 @@ return   {
         { name = 'path' },
       },
     }
-
-  end
+  end,
 }

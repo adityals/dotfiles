@@ -1,14 +1,11 @@
 return {
-  'rose-pine/neovim',
-  name = 'rose-pine',
+  'rebelot/kanagawa.nvim',
+  name = 'kanagawa',
   priority = 1000,
   config = function()
-    require('rose-pine').setup {
-      styles = {
-        italic = false,
-        transparency = true,
-      },
+    require('kanagawa').setup {
+      transparent = true,
     }
-    vim.cmd 'colorscheme rose-pine-moon'
+    vim.cmd 'colorscheme kanagawa-dragon'
   end,
 }
