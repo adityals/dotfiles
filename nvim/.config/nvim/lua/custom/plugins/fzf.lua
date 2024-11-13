@@ -17,13 +17,6 @@ return {
         end,
         desc = 'Search Pattern',
       },
-      {
-        '<leader>gs',
-        function()
-          require('fzf-lua').git_status {}
-        end,
-        desc = 'Git Status',
-      },
     },
     config = function()
       local fzflua = require 'fzf-lua'

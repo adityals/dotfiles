@@ -1,6 +1,23 @@
 return {
   -- Git related plugins
-  { 'tpope/vim-fugitive', event = 'VeryLazy' },
+  {
+    'NeogitOrg/neogit',
+    event = 'VeryLazy',
+    keys = {
+      {
+        '<leader>gs',
+        '<CMD>Neogit<CR>',
+        desc = 'Open Neogit',
+      },
+    },
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim',
+
+      'ibhagwan/fzf-lua',
+    },
+    config = true,
+  },
 
   -- Detect tabstop and shiftwidth automatically
   { 'tpope/vim-sleuth', event = 'VeryLazy' },
