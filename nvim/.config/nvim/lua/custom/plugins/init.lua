@@ -2,7 +2,6 @@ return {
   -- Git related plugins
   {
     'NeogitOrg/neogit',
-    event = 'VeryLazy',
     keys = {
       {
         '<leader>gs',
@@ -16,7 +15,6 @@ return {
 
       'ibhagwan/fzf-lua',
     },
-    config = true,
   },
 
   -- Detect tabstop and shiftwidth automatically
