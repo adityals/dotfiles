@@ -2,13 +2,6 @@
 
 Utilities for shell (using ohmyzsh)
 
-## Prerequisites:
-1. nvim
-2. lazygit
-3. fzf
-4. yazi
-
-
 ```bash
 # config dir
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -26,6 +19,17 @@ f() {
   local files
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && v "${files[@]}"
+}
+
+# yazi
+export EDITOR='nvim'
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 # simple zsh theme

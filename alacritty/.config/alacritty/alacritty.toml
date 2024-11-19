@@ -54,13 +54,8 @@ mode = "AppCursor"
 mods = "Command"
 
 [window]
-dimensions.columns = 160
-dimensions.lines = 45
-position.x = 75
-position.y = 90
 decorations = "buttonless"
 opacity = 1
-blur = true
 startup_mode = "Maximized"
 
 [window.padding]

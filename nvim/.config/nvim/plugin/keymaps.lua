@@ -7,6 +7,7 @@ local set = vim.keymap.set
 set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = '[y]ank to clipboard' })
 set('n', '<leader>Y', [["+Y]], { desc = '[Y]ank to clipboard' })
+set('n', '<leader>cp', '<CMD>let @+=expand("%:p")<CR>', { desc = 'copy filepath current buffer' })
 
 set('v', 'J', ":m '>+1<CR>gv=gv")
 set('v', 'K', ":m '<-2<CR>gv=gv")

@@ -17,6 +17,13 @@ return {
         end,
         desc = 'Search Pattern',
       },
+      {
+        '<leader>sw',
+        function()
+          require('fzf-lua').live_grep {}
+        end,
+        desc = 'Live Grep',
+      },
     },
     config = function()
       local fzflua = require 'fzf-lua'
