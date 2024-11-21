@@ -37,8 +37,8 @@ return {
           color_icons = false,
         },
         grep = {
-          -- adding --hidden from default value
-          rg_opts = '--hidden --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e',
+          -- adding --hidden from default value and exclude .git dir
+          rg_opts = '--hidden --glob=!.git/ --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e',
           git_icons = false,
           file_icons = false,
           color_icons = false,
