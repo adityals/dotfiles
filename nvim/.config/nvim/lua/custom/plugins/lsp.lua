@@ -14,6 +14,8 @@ return {
 
     -- Additional lua configuration, makes nvim stuff amazing!
     'folke/neodev.nvim',
+
+    'saghen/blink.cmp',
   },
   config = function()
     -- Setup neovim lua configuration
@@ -98,9 +100,8 @@ return {
       },
     }
 
-    -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+    -- blink.cmp supports additional completion capabilities, so broadcast that to servers
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     -- Ensure the servers above are installed
     local mason_lspconfig = require 'mason-lspconfig'

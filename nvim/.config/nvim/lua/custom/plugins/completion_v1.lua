@@ -1,7 +1,7 @@
 return {
-  -- Autocompletion
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter', -- https://github.com/hrsh7th/nvim-cmp/issues/65
+  enabled = false, -- disabled because trying blink.cmp
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
     {
@@ -34,7 +34,6 @@ return {
     local luasnip = require 'luasnip'
     require('luasnip.loaders.from_vscode').lazy_load()
     luasnip.config.setup {}
-
     cmp.setup {
       snippet = {
         expand = function(args)

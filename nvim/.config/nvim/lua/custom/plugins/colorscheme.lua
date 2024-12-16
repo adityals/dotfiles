@@ -4,7 +4,6 @@ return {
   priority = 1000,
   config = function()
     require('kanagawa').setup {
-      transparent = true,
       -- https://github.com/rebelot/kanagawa.nvim/blob/master/README.md#remove-gutter-background
       colors = {
         theme = {
@@ -17,12 +16,19 @@ return {
       },
       overrides = function(colors)
         local theme = colors.theme
+
         local makeDiagnosticColor = function(color)
           local c = require 'kanagawa.lib.color'
           return { fg = color, bg = c(color):blend(theme.ui.bg, 0.95):to_hex() }
         end
 
         return {
+          -- https://github.com/rebelot/kanagawa.nvim?tab=readme-ov-file#dark-completion-popup-menu
+          Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
+          PmenuSel = { fg = 'NONE', bg = theme.ui.bg_p2 },
+          PmenuSbar = { bg = theme.ui.bg_m1 },
+          PmenuThumb = { bg = theme.ui.bg_p2 },
+
           -- https://github.com/rebelot/kanagawa.nvim/blob/master/README.md#transparent-floating-windows
           NormalFloat = { bg = 'none' },
           FloatBorder = { bg = 'none' },
@@ -35,6 +41,7 @@ return {
           -- set their background accordingly if you wish to keep them dark and borderless
           LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
           MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+
           -- https://github.com/rebelot/kanagawa.nvim/blob/master/README.md#tint-background-of-diagnostic-messages-with-their-foreground-color
           DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
           DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
