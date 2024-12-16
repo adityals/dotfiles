@@ -5,6 +5,7 @@ return {
   lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
+    'nvim-treesitter/nvim-treesitter-context',
   },
   build = ':TSUpdate',
   config = function()
@@ -79,6 +80,71 @@ return {
             },
           },
         },
+      }
+      require('treesitter-context').setup {
+        enable = true,
+        max_lines = 0,
+        trim_scope = 'outer',
+        min_window_height = 0,
+        patterns = {
+          default = {
+            'class',
+            'function',
+            'method',
+            'for',
+            'while',
+            'if',
+            'switch',
+            'case',
+          },
+          tex = {
+            'chapter',
+            'section',
+            'subsection',
+            'subsubsection',
+          },
+          rust = {
+            'impl_item',
+            'struct',
+            'enum',
+          },
+          scala = {
+            'object_definition',
+          },
+          vhdl = {
+            'process_statement',
+            'architecture_body',
+            'entity_declaration',
+          },
+          markdown = {
+            'section',
+          },
+          elixir = {
+            'anonymous_function',
+            'arguments',
+            'block',
+            'do_block',
+            'list',
+            'map',
+            'tuple',
+            'quoted_content',
+          },
+          json = {
+            'pair',
+          },
+          yaml = {
+            'block_mapping_pair',
+          },
+        },
+        on_attach = function(bufnr)
+          if vim.bo[bufnr].filetype == 'markdown' or vim.bo[bufnr].filetype == 'org' then
+            return false
+          end
+        end,
+        exact_patterns = {},
+        zindex = 20,
+        mode = 'cursor',
+        separator = nil,
       }
     end, 0)
   end,

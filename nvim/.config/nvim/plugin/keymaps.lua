@@ -15,6 +15,9 @@ set('n', '<C-k>', '<cmd>cnext<CR>zz')
 set('n', '<C-j>', '<cmd>cprev<CR>zz')
 set('n', 'J', 'msJ`z')
 
+-- exit terminal with esc
+set('t', '<esc>', [[<C-\><C-n>]])
+
 -- Remap for dealing with word wrap
 set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
