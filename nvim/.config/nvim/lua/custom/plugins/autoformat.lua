@@ -7,9 +7,8 @@ return {
   event = { 'BufWritePre' }, -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#lazy-loading-with-lazynvim
   opts = {
     notify_on_error = false,
-    format_on_save = {
-      timeout_ms = 500,
-      lsp_fallback = true,
+    format_after_save = {
+      lsp_format = 'fallback',
     },
     formatters_by_ft = {
       lua = { 'stylua' },

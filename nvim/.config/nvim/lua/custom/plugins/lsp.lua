@@ -110,7 +110,7 @@ return {
       ensure_installed = vim.tbl_keys(servers),
     }
 
-    local get_root_dir = function(fname)
+    local get_git_root_dir = function(fname)
       local util = require 'lspconfig.util'
       return util.root_pattern '.git'(fname)
     end
@@ -128,13 +128,13 @@ return {
       end,
       ['ts_ls'] = function()
         lspconfig.ts_ls.setup {
-          root_dir = get_root_dir,
+          root_dir = get_git_root_dir,
           on_attach = on_attach,
         }
       end,
       ['eslint'] = function()
         lspconfig.eslint.setup {
-          root_dir = get_root_dir,
+          root_dir = get_git_root_dir,
           on_attach = on_attach,
         }
       end,

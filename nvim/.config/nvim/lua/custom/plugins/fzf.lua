@@ -34,6 +34,11 @@ return {
       end
 
       fzflua.setup {
+        keymap = {
+          fzf = {
+            ['ctrl-q'] = 'select-all+accept',
+          },
+        },
         defaults = {
           git_icons = false,
           file_icons = false,
