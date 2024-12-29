@@ -97,6 +97,7 @@ return {
           -- adding --hidden from default value and exclude .git dir
           rg_opts = '--hidden --glob=!.git/ --column --line-number --no-heading --color=never --smart-case --max-columns=4096 -e',
         },
+        files = { cwd_prompt = false },
       }
     end,
   },
