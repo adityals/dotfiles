@@ -1,0 +1,12 @@
+# ===== ui
+theme = Kanagawa Dragon
+font-size = 16
+title = " "
+macos-titlebar-proxy-icon = hidden
+# just for maximized
+window-height = 99999
+window-width = 99999
+mouse-hide-while-typing
+
+# ===== keybind
+keybind = cmd+backspace=esc:w

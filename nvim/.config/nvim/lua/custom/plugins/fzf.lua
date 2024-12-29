@@ -20,7 +20,7 @@ return {
       {
         '<leader>sw',
         function()
-          require('fzf-lua').live_grep {}
+          require('fzf-lua').live_grep_glob {}
         end,
         desc = 'Live Grep',
       },
