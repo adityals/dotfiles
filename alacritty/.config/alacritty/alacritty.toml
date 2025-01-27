@@ -3,7 +3,7 @@
 TERM = "xterm-256color"
 
 [general]
-import = ["~/.config/alacritty/themes/nordfox.toml"]
+import = ["~/.config/alacritty/themes/rosepine.toml"]
 
 [font]
 size = 17.5
@@ -60,12 +60,12 @@ mods = "Command"
 
 [window]
 decorations = "buttonless"
-opacity = 1
+opacity = 0.9
 startup_mode = "Maximized"
 
 [window.padding]
-x = 5
-y = 5
+x = 3
+y = 3
 
 [mouse]
 hide_when_typing = true

@@ -1,21 +1,22 @@
 return {
   {
-    'EdenEast/nightfox.nvim',
+    'rose-pine/neovim',
     lazy = false,
     priority = 1000,
     config = function()
-      require('nightfox').setup {
-        options = {
-          transparent = false,
-          styles = {
-            comments = 'italic',
-            keywords = 'bold',
-            types = 'italic,bold',
+      require('rose-pine').setup {
+        styles = {
+          transparency = true,
+          italic = false,
+        },
+        palette = {
+          moon = {
+            base = '#181616',
           },
         },
-        palettes = { nordfox = { bg1 = '#181616' } },
+        highlight_groups = {},
       }
-      vim.cmd 'colorscheme nordfox'
+      vim.cmd 'colorscheme rose-pine-moon'
     end,
   },
   {

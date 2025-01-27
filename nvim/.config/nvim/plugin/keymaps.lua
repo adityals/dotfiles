@@ -28,6 +28,12 @@ set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message
 set('n', 'gl', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- utils
+-- Toggle inlay hints
+set('n', '<leader>ih', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { 0 }, { 0 })
+end, { desc = 'Toggle inlay hints' })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

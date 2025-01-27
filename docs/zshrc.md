@@ -14,7 +14,7 @@ alias vi="nvim"
 alias lg="lazygit"
 
 # fuzzy find
-export FZF_DEFAULT_COMMAND='fd -H -E .git' # list hidden files but ignores .git
+export FZF_DEFAULT_COMMAND='fd --type file -H -E .git' # list hidden files but ignores .git
 f() {
   local files
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
