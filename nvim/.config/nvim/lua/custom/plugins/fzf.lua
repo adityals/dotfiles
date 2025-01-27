@@ -11,6 +11,13 @@ return {
         desc = 'Search Files',
       },
       {
+        '<leader>fo',
+        function()
+          require('fzf-lua').oldfiles {}
+        end,
+        desc = 'Search Old Files',
+      },
+      {
         '<leader>ps',
         function()
           require('fzf-lua').grep {}
@@ -22,7 +29,7 @@ return {
         function()
           require('fzf-lua').live_grep_glob {}
         end,
-        desc = 'Live Grep',
+        desc = 'Search Words Live',
       },
     },
     config = function()

@@ -129,12 +129,14 @@ return {
         end,
         ['ts_ls'] = function()
           lspconfig.ts_ls.setup {
+            capabilities = capabilities,
             root_dir = get_git_root_dir,
             on_attach = on_attach,
           }
         end,
         ['eslint'] = function()
           lspconfig.eslint.setup {
+            capabilities = capabilities,
             root_dir = get_git_root_dir,
             on_attach = on_attach,
           }
