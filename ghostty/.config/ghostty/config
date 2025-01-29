@@ -1,12 +1,8 @@
 # ===== ui
-theme = Kanagawa Dragon
-font-size = 16
-title = " "
+theme = rose-pine
+font-size = 17.5
+background = 181616
 macos-titlebar-proxy-icon = hidden
-# just for maximized
-window-height = 99999
-window-width = 99999
+macos-non-native-fullscreen = true
 mouse-hide-while-typing
-
-# ===== keybind
-keybind = cmd+backspace=esc:w
+window-decoration = none
