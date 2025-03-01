@@ -1,8 +1,10 @@
 # ===== ui
-theme = rose-pine
+theme = darkvoid
 font-size = 17.5
 background = 181616
 macos-titlebar-proxy-icon = hidden
 macos-non-native-fullscreen = true
 mouse-hide-while-typing
 window-decoration = none
+# background-opacity = 0.9
+background-blur

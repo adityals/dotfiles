@@ -11,11 +11,11 @@ return {
         desc = 'Search Files',
       },
       {
-        '<leader>fo',
+        '<leader>fb',
         function()
-          require('fzf-lua').oldfiles {}
+          require('fzf-lua').buffers {}
         end,
-        desc = 'Search Old Files',
+        desc = 'Search buffers',
       },
       {
         '<leader>ps',

@@ -24,8 +24,22 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   import = 'custom/plugins',
 }, {
+  ui = { border = 'rounded' },
   change_detection = {
     notify = false,
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        'gzip',
+        'netrwPlugin',
+        'rplugin',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
+      },
+    },
   },
 })
 

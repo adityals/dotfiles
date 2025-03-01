@@ -10,4 +10,7 @@ return {
       section_separators = '',
     },
   },
+  config = function()
+    require('darkvoid').setup()
+  end,
 }

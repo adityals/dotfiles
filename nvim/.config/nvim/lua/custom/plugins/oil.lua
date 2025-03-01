@@ -8,11 +8,11 @@ return {
       view_options = {
         show_hidden = true,
       },
-      lsp_file_methods = {
-        enabled = true,
-        timeout_ms = 5000,
-        autosave_changes = true,
-      },
+      -- lsp_file_methods = {
+      --   enabled = true,
+      --   timeout_ms = 5000, -- default 1000
+      --   autosave_changes = true, -- default false
+      -- },
       keymaps = {
         ['g?'] = { 'actions.show_help', mode = 'n' },
         ['<CR>'] = 'actions.select',
@@ -35,6 +35,6 @@ return {
     }
 
     vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory with oil' })
-    vim.keymap.set('n', '<leader>e', oil.toggle_float, { desc = 'Toggle oil flot in parent directory' })
+    vim.keymap.set('n', '<leader>e', oil.toggle_float, { desc = 'Toggle oil float in curr directory' })
   end,
 }

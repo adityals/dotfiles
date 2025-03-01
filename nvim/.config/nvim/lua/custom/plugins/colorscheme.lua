@@ -1,28 +1,42 @@
 return {
   {
-    'rose-pine/neovim',
+    'aliqyan-21/darkvoid.nvim',
     lazy = false,
     priority = 1000,
+    opts = {},
     config = function()
-      require('rose-pine').setup {
-        styles = {
-          transparency = true,
-          italic = false,
+      require('darkvoid').setup {
+        transparent = true,
+        glow = true,
+        colors = {
+          fg = '#c0c0c0',
+          bg = '#1c1c1c',
+          cursor = '#bdfe58',
+          line_nr = '#404040',
+          visual = '#303030',
+          comment = '#585858',
+          string = '#d1d1d1',
+          func = '#e1e1e1',
+          kw = '#f1f1f1',
+          identifier = '#b1b1b1',
+          type = '#a1a1a1',
+          type_builtin = '#c5c5c5', -- current
+          -- type_builtin = '#8cf8f7', -- glowy blue old (was present by default before type_builtin was introduced added here for people who may like it)
+          search_highlight = '#1bfd9c',
+          operator = '#1bfd9c',
+          bracket = '#1bfd9c',
+          preprocessor = '#4b8902',
+          bool = '#66b2b2',
+          constant = '#b2d8d8',
         },
-        palette = {
-          moon = {
-            base = '#181616',
-          },
-        },
-        highlight_groups = {},
       }
-      vim.cmd 'colorscheme rose-pine-moon'
+      vim.cmd 'colorscheme darkvoid'
     end,
   },
   {
     'rebelot/kanagawa.nvim',
     name = 'kanagawa',
-    enabled = false, -- enable when not boring
+    enabled = false,
     priority = 1000,
     config = function()
       require('kanagawa').setup {
