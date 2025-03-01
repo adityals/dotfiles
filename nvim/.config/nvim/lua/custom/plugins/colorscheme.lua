@@ -5,6 +5,8 @@ return {
     priority = 1000,
     opts = {},
     config = function()
+      local glow_base_color = '#1bfd9c'
+
       require('darkvoid').setup {
         transparent = true,
         glow = true,
@@ -22,9 +24,9 @@ return {
           type = '#a1a1a1',
           type_builtin = '#c5c5c5', -- current
           -- type_builtin = '#8cf8f7', -- glowy blue old (was present by default before type_builtin was introduced added here for people who may like it)
-          search_highlight = '#1bfd9c',
-          operator = '#1bfd9c',
-          bracket = '#1bfd9c',
+          search_highlight = glow_base_color,
+          operator = glow_base_color,
+          bracket = glow_base_color,
           preprocessor = '#4b8902',
           bool = '#66b2b2',
           constant = '#b2d8d8',

@@ -33,6 +33,7 @@ set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list
 set('n', '<leader>ih', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { 0 }, { 0 })
 end, { desc = 'Toggle inlay hints' })
+-- close all buffer
 vim.keymap.set('n', '<leader>bo', '<cmd>%bd|e#<cr>', { desc = 'Close all buffers but the current one' })
 
 -- [[ Highlight on yank ]]

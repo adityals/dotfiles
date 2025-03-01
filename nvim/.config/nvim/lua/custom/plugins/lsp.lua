@@ -112,7 +112,7 @@ return {
 
       local lspconfig = require 'lspconfig'
 
-      local ts_ls_inlay_hints = {
+      local tsls_inlay_hints = {
         includeInlayEnumMemberValueHints = true,
         includeInlayFunctionLikeReturnTypeHints = true,
         includeInlayFunctionParameterTypeHints = true,
@@ -132,6 +132,7 @@ return {
             filetypes = (servers[server_name] or {}).filetypes,
           }
         end,
+        -- NOTES: if somewhat broken change back to ts_ls
         ['ts_ls'] = function()
           lspconfig.ts_ls.setup {
             capabilities = capabilities,
@@ -145,13 +146,13 @@ return {
                 tsserver = {
                   maxTsServerMemory = 8192,
                 },
-                inlayHints = ts_ls_inlay_hints,
+                inlayHints = tsls_inlay_hints,
               },
               javascript = {
                 suggest = {
                   autoImports = false,
                 },
-                inlayHints = ts_ls_inlay_hints,
+                inlayHints = tsls_inlay_hints,
               },
             },
           }
