@@ -1,6 +1,7 @@
 return {
   {
     'aliqyan-21/darkvoid.nvim',
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {},
@@ -38,11 +39,11 @@ return {
   {
     'rebelot/kanagawa.nvim',
     name = 'kanagawa',
-    enabled = false,
     priority = 1000,
     config = function()
       require('kanagawa').setup {
         -- https://github.com/rebelot/kanagawa.nvim/blob/master/README.md#remove-gutter-background
+        transparent = true,
         colors = {
           theme = {
             all = {

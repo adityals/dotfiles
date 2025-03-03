@@ -34,4 +34,11 @@ function y() {
 
 # simple zsh theme
 ZSH_THEME="robbyrussell"
+
+# plugins
+plugins=(git nvm)
+
+# nvm plugin config
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy-cmd eslint prettier typescript
 ```
