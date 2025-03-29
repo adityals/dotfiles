@@ -3,8 +3,16 @@
 Utilities for shell (using ohmyzsh)
 
 ```bash
+# to run profile cmd: 
+# time ZSH_DEBUGRC=1 zsh -i -c exit
+if [ -n "${ZSH_DEBUGRC+1}" ]; then
+    zmodload zsh/zprof
+fi
+
 # config dir
 export XDG_CONFIG_HOME="$HOME/.config"
+# enable when nvm dir is not under root/custom dir location
+# export NVM_DIR=""
 
 # Aliasing
 alias ovim="vim"
@@ -40,5 +48,11 @@ plugins=(git nvm)
 
 # nvm plugin config
 zstyle ':omz:plugins:nvm' lazy yes
-zstyle ':omz:plugins:nvm' lazy-cmd eslint prettier typescript
+zstyle ':omz:plugins:nvm' lazy-cmd eslint prettier typescript nvm
+
+# source omz
+
+if [ -n "${ZSH_DEBUGRC+1}" ]; then
+    zprof
+fi
 ```

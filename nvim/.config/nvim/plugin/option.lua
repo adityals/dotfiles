@@ -1,6 +1,5 @@
 -- [[ Setting options ]]
 -- See `:help vim.opt
---
 
 local opt = vim.opt
 local wo = vim.wo
@@ -45,6 +44,7 @@ opt.termguicolors = true
 --  My custom options
 opt.list = true
 opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+opt.showbreak = '↪'
 
 opt.cursorline = true
 
@@ -58,4 +58,7 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 
-opt.colorcolumn = "120"
+opt.colorcolumn = '120'
+
+-- disable showmode
+vim.cmd 'set noshowmode'
