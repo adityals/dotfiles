@@ -6,14 +6,6 @@ vim.lsp.enable({
     'gopls',
 })
 
-vim.diagnostic.config({
-    virtual_lines = {
-        current_line = true
-    },
-    virtual_text = false,
-    severity_sort = true,
-})
-
 --  merge lsp capabilities with blink (blink should not be lazy)
 local capabilities = {
     textDocument = {

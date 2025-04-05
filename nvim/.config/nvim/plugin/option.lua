@@ -43,6 +43,7 @@ opt.termguicolors = true
 
 --  My custom options
 opt.list = true
+---@diagnostic disable-next-line: missing-fields
 opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 opt.showbreak = '↪'
 

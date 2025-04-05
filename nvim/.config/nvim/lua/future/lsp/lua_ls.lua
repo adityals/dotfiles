@@ -23,6 +23,9 @@ return {
             },
             telemetry = { enable = false },
             diagnostics = { globals = { 'vim' } },
+            hint = {
+                enable = true
+            }
         },
     },
 }

@@ -1,26 +1,16 @@
 local api = vim.api
 local lsp = vim.lsp
-
--- See `:help vim.highlight.on_yank()`
-local highlight_group = api.nvim_create_augroup('YankHighlight', { clear = true })
-api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = '*',
-})
-
-api.nvim_create_user_command('LspInfo', ':checkhealth vim.lsp', { desc = 'Alias to `:checkhealth vim.lsp`' })
+local set = vim.keymap.set
 
 api.nvim_create_autocmd('LspAttach', {
     group = api.nvim_create_augroup('my_lsp_attach', { clear = true }),
     callback = function(event)
-        local map = function(keys, func, desc)
+        local map = function(keys, func, desc, mode)
+            mode = mode or 'n'
             if desc then
                 desc = 'LSP: ' .. desc
             end
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
+            set(mode, keys, func, { buffer = event.buf, desc = desc })
         end
 
 
@@ -54,7 +44,7 @@ api.nvim_create_autocmd('LspAttach', {
 
         local client = lsp.get_client_by_id(event.data.client_id)
         if client and client_supports_method(client, lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
-            local highlight_augroup = api.nvim_create_augroup('my_lsp_attach', { clear = false })
+            local highlight_augroup = api.nvim_create_augroup('my_lsp_highlight', { clear = false })
             api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
                 buffer = event.buf,
                 group = highlight_augroup,
@@ -68,29 +58,18 @@ api.nvim_create_autocmd('LspAttach', {
             })
 
             api.nvim_create_autocmd('LspDetach', {
-                group = api.nvim_create_augroup('my_lsp_attach', { clear = true }),
+                group = api.nvim_create_augroup('my_lsp_detach', { clear = true }),
                 callback = function(event_detach)
                     lsp.buf.clear_references()
-                    api.nvim_clear_autocmds { group = 'my_lsp_attach', buffer = event_detach.buf }
+                    api.nvim_clear_autocmds { group = 'my_lsp_highlight', buffer = event_detach.buf }
                 end,
             })
         end
 
         if client and client_supports_method(client, lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-            map('<leader>th', function()
+            map('<leader>ih', function()
                 lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
         end
     end
 })
-
-api.nvim_create_user_command('LspLog', function()
-    vim.cmd(string.format('tabnew %s', lsp.get_log_path()))
-end, {
-    desc = 'Opens the Nvim LSP client log.',
-})
-
-api.nvim_create_user_command('LspStop', function()
-    local lsp_clients = vim.lsp.get_clients()
-    vim.lsp.stop_client(lsp_clients)
-end, { desc = 'Stop LSP' })
