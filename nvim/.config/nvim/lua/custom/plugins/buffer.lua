@@ -4,7 +4,6 @@ return {
         opts = {},
         event = 'VeryLazy',
         keys = {
-
             {
                 '<leader>bc',
                 function()

@@ -1,8 +1,6 @@
 return {
     {
         'nvim-treesitter/nvim-treesitter',
-        event = { 'VeryLazy' },
-        lazy = vim.fn.argc(-1) == 0,
         branch = "main",
         build = ':TSUpdate',
         config = function()
@@ -25,8 +23,6 @@ return {
     },
     {
         'nvim-treesitter/nvim-treesitter-context',
-        event = { 'VeryLazy' },
-        lazy = vim.fn.argc(-1) == 0,
         config = function()
             require('treesitter-context').setup {
                 enable = true,

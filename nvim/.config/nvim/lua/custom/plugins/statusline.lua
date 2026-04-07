@@ -4,8 +4,6 @@ return {
   dependencies = {
     'franco-ruggeri/codecompanion-lualine.nvim',
   },
-  event = 'VeryLazy', -- https://www.lazyvim.org/configuration/examples
-  -- See `:help lualine.txt`
   opts = {
     options = {
       icons_enabled = false,
