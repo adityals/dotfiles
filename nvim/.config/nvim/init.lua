@@ -9,6 +9,9 @@ vim.g.trae_disable_autocompletion = true
 vim.g.trae_no_map_tab = true
 vim.g.trae_disable_bindings = true
 
+-- NOTES: experimental
+require('vim._core.ui2').enable({})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info

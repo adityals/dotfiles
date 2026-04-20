@@ -11,7 +11,7 @@ return {
   },
   settings = {
     validate = 'on',
-    packageManager = nil,
+    packageManager = vim.NIL,
     useESLintClass = false,
     experimental = {
       useFlatConfig = false,
