@@ -18,7 +18,6 @@ return {
         conflict_sign_accepted = nil,
         conflict_sign_rejected = nil,
       },
-
       diff = {
         disable_inlay_hints = true,
         max_computation_time_ms = 5000,
@@ -28,7 +27,6 @@ return {
         conflict_ours_position = "right",
         cycle_next_hunk = true,
       },
-
       explorer = {
         position = "left",
         width = 40,

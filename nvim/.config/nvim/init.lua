@@ -9,6 +9,10 @@ vim.g.trae_disable_autocompletion = true
 vim.g.trae_no_map_tab = true
 vim.g.trae_disable_bindings = true
 
+-- set transparent
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NonText", { bg = "none" })
+
 -- NOTES: experimental
 require('vim._core.ui2').enable({})
 

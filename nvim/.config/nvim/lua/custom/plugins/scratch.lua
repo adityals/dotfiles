@@ -1,7 +1,6 @@
 return {
   {
     'LintaoAmons/scratch.nvim',
-    event = 'VeryLazy',
     keys = {
       {
         '<leader>sn',
@@ -17,7 +16,6 @@ return {
   },
   {
     'CRAG666/code_runner.nvim',
-    event = 'VeryLazy',
     keys = {
       {
         '<leader>cr',

@@ -4,10 +4,5 @@ return {
     'saghen/blink.indent',
     event = 'VeryLazy',
     opts = {},
-  },
-  {
-    'suvasanket/oz.nvim',
-    event = 'VeryLazy',
-    opts = {},
-  },
+  }
 }

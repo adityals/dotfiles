@@ -15,8 +15,7 @@ return {
     },
     dependencies = {
         'neovim/nvim-lspconfig',
-        { 'williamboman/mason.nvim',        config = true },
-        { 'linrongbin16/lsp-progress.nvim', opts = {} },
+        { 'williamboman/mason.nvim', config = true },
     },
     config = function()
         local mason = require 'mason'

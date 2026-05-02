@@ -3,7 +3,7 @@
 TERM = "xterm-256color"
 
 [general]
-import = ["~/.config/alacritty/themes/rose_pine.toml"]
+# import = ["~/.config/alacritty/themes/rose_pine.toml"]
 
 [font]
 size = 17.5
@@ -65,7 +65,8 @@ blur = false
 startup_mode = "Maximized"
 
 [window.padding]
-x = 3
+x = 5
+y = 5
 
 # let's see the experience
 [mouse]

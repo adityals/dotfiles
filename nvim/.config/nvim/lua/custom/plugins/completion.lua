@@ -7,7 +7,7 @@ return {
   },
   {
     'saghen/blink.cmp',
-    lazy = false,
+    event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       'rafamadriz/friendly-snippets',
       'folke/lazydev.nvim',
