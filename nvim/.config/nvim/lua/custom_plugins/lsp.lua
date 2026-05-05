@@ -5,7 +5,10 @@ vim.pack.add({
 }, { confirm = false })
 
 local mason = require 'mason'
-mason.setup {
+mason.setup {}
+
+local mason_lsp = require 'mason-lspconfig'
+mason_lsp.setup {
   ensure_installed = {
     'copilot',
     'cssls',
@@ -13,7 +16,10 @@ mason.setup {
     'gopls',
     'lua_ls',
     'oxlint',
+    'oxfmt',
+    'stylua',
     'rust_analyzer',
+    'tsgo',
     'tailwindcss',
     'vtsls',
   },
@@ -50,6 +56,8 @@ vim.lsp.enable {
   'gopls',
   'lua_ls',
   'oxlint',
+  'oxfmt',
+  'stylua',
   'rust_analyzer',
   'tailwindcss',
   'vtsls',
