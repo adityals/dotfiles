@@ -7,13 +7,13 @@ vim.pack.add({
 local mason = require 'mason'
 mason.setup {
   ensure_installed = {
+    'copilot',
     'cssls',
     'eslint',
     'gopls',
     'lua_ls',
     'oxlint',
     'rust_analyzer',
-    'stylua',
     'tailwindcss',
     'vtsls',
   },

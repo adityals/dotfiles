@@ -15,8 +15,8 @@ require 'custom_plugins.buffer'
 require 'custom_plugins.git'
 require 'custom_plugins.small_utils'
 
--- internal for work related
-local exist, trae = pcall(require, 'trae')
+-- internal work related
+local exist, mod = pcall(require, 'trae')
 if exist then
-  trae.setup {}
+  mod.setup {}
 end
