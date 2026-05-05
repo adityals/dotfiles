@@ -2,9 +2,6 @@
 [env]
 TERM = "xterm-256color"
 
-[general]
-# import = ["~/.config/alacritty/themes/rose_pine.toml"]
-
 [font]
 size = 17.5
 
