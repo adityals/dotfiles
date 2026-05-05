@@ -4,5 +4,5 @@ test.sh
 nvim
 
 # this is my corp internal
-trae.lua
+pack/byted/
 internal_ai.lua
