@@ -1,7 +1,7 @@
 # .dotfiles
 
 ## Description
-Dotfiles for sync across computers
+Managed dotfiles for cross-platform synchronization using GNU Stow.
 
 Managed by GNU `stow`. 
 ----

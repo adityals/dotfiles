@@ -1,10 +1,20 @@
 vim.pack.add({
-  { src = gh 'serhez/bento.nvim' },
+  { src = gh 'serhez/bento.nvim', load = function() end },
 }, { confirm = false })
 
-local bento = require 'bento'
-bento.setup {}
-
-vim.keymap.set('n', '<leader>bc', function()
-  require('bento').close_all_buffers { visible = false, locked = false, current = false }
-end, { desc = 'Close non visibile and protected buffers' })
+require('lz.n').load {
+  'bento.nvim',
+  event = { 'BufRead', 'BufNewFile' },
+  after = function()
+    require('bento').setup {}
+  end,
+  keys = {
+    {
+      '<leader>bc',
+      function()
+        require('bento').close_all_buffers { visible = false, locked = false, current = false }
+      end,
+      { desc = 'Close non visibile and protected buffers' },
+    },
+  },
+}

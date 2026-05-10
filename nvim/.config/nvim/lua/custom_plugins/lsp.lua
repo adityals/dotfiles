@@ -1,3 +1,5 @@
+-- lsp eager start
+
 vim.pack.add({
   gh 'neovim/nvim-lspconfig',
   gh 'williamboman/mason.nvim',

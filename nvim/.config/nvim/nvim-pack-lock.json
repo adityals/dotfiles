@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "99": {
+      "rev": "4d229141546290746c82ac90f5afc2786865b5f3",
+      "src": "https://github.com/ThePrimeagen/99"
+    },
     "arrow.nvim": {
       "rev": "6e0f726f55f99332dd726a53effd6813786b6d49",
       "src": "https://github.com/otavioschwanck/arrow.nvim"
@@ -58,6 +62,10 @@
     "lazydev.nvim": {
       "rev": "ff2cbcba459b637ec3fd165a2be59b7bbaeedf0d",
       "src": "https://github.com/folke/lazydev.nvim"
+    },
+    "lz.n": {
+      "rev": "b492226eb8b2185974e167fcf3afd5c80aad84be",
+      "src": "https://github.com/lumen-oss/lz.n"
     },
     "mason-lspconfig.nvim": {
       "rev": "0c2823e0418f3d9230ff8b201c976e84de1cb401",

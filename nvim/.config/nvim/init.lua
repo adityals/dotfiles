@@ -16,6 +16,9 @@ vim.api.nvim_set_hl(0, 'NonText', { bg = 'none' })
 -- NOTES: experimental
 require('vim._core.ui2').enable {}
 
+-- lazy load util
+vim.pack.add({ 'https://github.com/lumen-oss/lz.n' }, { confirm = false })
+
 require 'custom_plugins'
 
 -- The line beneath this is called `modeline`. See `:help modeline`

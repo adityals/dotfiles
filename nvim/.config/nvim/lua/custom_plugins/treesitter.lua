@@ -1,3 +1,5 @@
+-- treesitter eager start
+
 local api = vim.api
 
 vim.pack.add({
@@ -113,6 +115,7 @@ api.nvim_create_autocmd('BufReadPre', {
     setup_autotag()
   end,
 })
+
 api.nvim_create_autocmd('BufNewFile', {
   pattern = '*',
   callback = function()

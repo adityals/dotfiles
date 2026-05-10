@@ -1,37 +1,70 @@
 vim.pack.add({
-  gh 'MagicDuck/grug-far.nvim',
-  gh 'otavioschwanck/arrow.nvim',
-  gh 'hedyhli/outline.nvim',
-  gh 'saghen/blink.indent',
-  gh 'folke/which-key.nvim',
+  { src = gh 'MagicDuck/grug-far.nvim', load = function() end },
+  { src = gh 'otavioschwanck/arrow.nvim', load = function() end },
+  { src = gh 'hedyhli/outline.nvim', load = function() end },
+  { src = gh 'saghen/blink.indent', load = function() end },
+  { src = gh 'folke/which-key.nvim' },
 }, { confirm = false })
 
--- grug-far -> for search and replace
-require('grug-far').setup {}
-
--- arrow -> code marking navigation
-require('arrow').setup {
-  show_icons = false,
-  leader_key = '<space>;',
-  buffer_leader_key = '<space>m',
-}
-
--- outline -> outline code
-require('outline').setup {
-  outline_window = {
-    position = 'left',
+require('lz.n').load {
+  -- grug-far -> for search and replace
+  {
+    'grug-far.nvim',
+    cmd = { 'GrugFar', 'GrugFarWithin' },
+    after = function()
+      require('grug-far').setup {}
+    end,
+  },
+  {
+    -- outline -> outline code
+    'outline.nvim',
+    keys = {
+      {
+        '<leader>o',
+        '<cmd>Outline<CR>',
+        { desc = 'Toggle outline' },
+      },
+    },
+    after = function()
+      require('outline').setup {
+        outline_window = {
+          position = 'left',
+        },
+      }
+    end,
+  },
+  -- undotree
+  {
+    'nvim.undotree',
+    keys = {
+      { '<leader>u', '<cmd>Undotree<cr>', { desc = 'Toggle Undotree' } },
+    },
+    after = function()
+      vim.cmd 'packadd nvim.undotree'
+    end,
+  },
+  -- arrow -> code marking navigation
+  {
+    'arrow.nvim',
+    event = { 'BufRead', 'BufNewFile' },
+    after = function()
+      require('arrow').setup {
+        show_icons = false,
+        leader_key = '<space>;',
+        buffer_leader_key = '<space>m',
+      }
+    end,
+  },
+  -- blink.indent -> for indent marking
+  {
+    'blink.indent',
+    event = { 'BufRead', 'BufNewFile' },
+    after = function()
+      require('blink.indent').setup {}
+    end,
   },
 }
-vim.keymap.set('n', '<leader>o', '<cmd>Outline<CR>', { desc = 'Toggle outline' })
 
--- blink.indent -> for indent marking
-require('blink.indent').setup {}
-
--- undotree
-vim.cmd 'packadd nvim.undotree'
-vim.keymap.set('n', '<leader>u', '<cmd>Undotree<cr>', { desc = 'Toggle Undotree' })
-
--- which-key
 require('which-key').setup {
   preset = 'helix',
 }
