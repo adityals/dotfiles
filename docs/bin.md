@@ -1,6 +1,7 @@
 # bin
 
 Must have binaries (can install with homebrew):
+- nvim (0.12.2)
 - stow
 - lazygit
 - fzf
