@@ -51,10 +51,6 @@
       "rev": "3ff77862f6c62f7b850668435ae43aa026de8758",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
-    "grug-far.nvim": {
-      "rev": "5506c2f59dc9ab2ed6c233585412b24d31d51521",
-      "src": "https://github.com/MagicDuck/grug-far.nvim"
-    },
     "lazydev.nvim": {
       "rev": "ff2cbcba459b637ec3fd165a2be59b7bbaeedf0d",
       "src": "https://github.com/folke/lazydev.nvim"
@@ -98,6 +94,10 @@
     "outline.nvim": {
       "rev": "c293eb56db880a0539bf9d85b4a27816960b863e",
       "src": "https://github.com/hedyhli/outline.nvim"
+    },
+    "quicker.nvim": {
+      "rev": "4a6883cb13fe097a20a046eb55f6dffd239276e3",
+      "src": "https://github.com/stevearc/quicker.nvim"
     },
     "sidekick.nvim": {
       "rev": "208e1c5b8170c01fd1d07df0139322a76479b235",
