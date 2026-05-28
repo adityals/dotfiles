@@ -4,6 +4,8 @@ vim.pack.add({
   { src = gh 'saghen/blink.indent', load = function() end },
   { src = gh 'stevearc/quicker.nvim', load = function() end },
   { src = gh 'folke/which-key.nvim' },
+  { src = gh 'nvim-lua/plenary.nvim' },
+  { src = gh 'oysandvik94/curl.nvim' },
 }, { confirm = false })
 
 require('lz.n').load {
@@ -61,6 +63,14 @@ require('lz.n').load {
     event = { 'BufRead', 'BufNewFile' },
     after = function()
       require('blink.indent').setup {}
+    end,
+  },
+  -- curl
+  {
+    'curl.nvim',
+    cmd = 'CurlOpen',
+    after = function()
+      require('curl').setup {}
     end,
   },
 }
