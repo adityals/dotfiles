@@ -5,7 +5,7 @@ vim.pack.add({
   { src = gh 'stevearc/quicker.nvim', load = function() end },
   { src = gh 'folke/which-key.nvim' },
   { src = gh 'nvim-lua/plenary.nvim' },
-  { src = gh 'oysandvik94/curl.nvim' },
+  { src = gh 'oysandvik94/curl.nvim', load = function() end },
 }, { confirm = false })
 
 require('lz.n').load {
