@@ -2,7 +2,6 @@
 
 Must have binaries (can install with homebrew):
 - nvim (0.12.2)
-- [omniwm](https://github.com/BarutSRB/OmniWM/#homebrew)
 - stow
 - lazygit
 - fzf
