@@ -23,7 +23,6 @@ require('lz.n').load {
 }
 
 local api = vim.api
-
 api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
   callback = function(args)

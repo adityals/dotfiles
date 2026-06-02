@@ -1,18 +1,20 @@
 vim.pack.add({
-  { src = gh 'MagicDuck/grug-far.nvim', load = function() end },
   { src = gh 'otavioschwanck/arrow.nvim', load = function() end },
   { src = gh 'hedyhli/outline.nvim', load = function() end },
   { src = gh 'saghen/blink.indent', load = function() end },
+  { src = gh 'stevearc/quicker.nvim', load = function() end },
   { src = gh 'folke/which-key.nvim' },
+  { src = gh 'nvim-lua/plenary.nvim' },
+  { src = gh 'oysandvik94/curl.nvim', load = function() end },
 }, { confirm = false })
 
 require('lz.n').load {
-  -- grug-far -> for search and replace
+  -- quicker - search and replace
   {
-    'grug-far.nvim',
-    cmd = { 'GrugFar', 'GrugFarWithin' },
+    'quicker.nvim',
+    ft = 'qf',
     after = function()
-      require('grug-far').setup {}
+      require('quicker').setup {}
     end,
   },
   {
@@ -61,6 +63,14 @@ require('lz.n').load {
     event = { 'BufRead', 'BufNewFile' },
     after = function()
       require('blink.indent').setup {}
+    end,
+  },
+  -- curl
+  {
+    'curl.nvim',
+    cmd = 'CurlOpen',
+    after = function()
+      require('curl').setup {}
     end,
   },
 }

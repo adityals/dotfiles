@@ -14,9 +14,3 @@ require 'custom_plugins.autopair'
 require 'custom_plugins.buffer'
 require 'custom_plugins.git'
 require 'custom_plugins.small_utils'
-
--- internal work related
-local exist, mod = pcall(require, 'trae')
-if exist then
-  mod.setup {}
-end

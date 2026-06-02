@@ -23,15 +23,10 @@ mason_lsp.setup {
     'rust_analyzer',
     'tsgo',
     'tailwindcss',
-    'vtsls',
   },
 }
 
 local capabilities = require('blink.cmp').get_lsp_capabilities()
-
-vim.lsp.config('vtsls', {
-  settings = require('lsp_config.vtsls').settings,
-})
 
 vim.lsp.config('lua_ls', {
   settings = require('lsp_config.lua_ls').settings,
@@ -45,6 +40,10 @@ vim.lsp.config('eslint', {
 
 vim.lsp.config('gopls', {
   settings = require('lsp_config.gopls').settings,
+})
+
+vim.lsp.config('tsgo', {
+  settings = require('lsp_config.tsgo').settings,
 })
 
 vim.lsp.config('*', {
@@ -62,5 +61,5 @@ vim.lsp.enable {
   'stylua',
   'rust_analyzer',
   'tailwindcss',
-  'vtsls',
+  'tsgo',
 }

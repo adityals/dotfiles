@@ -53,6 +53,7 @@ require('lz.n').load {
     after = function()
       local fzflua = require 'fzf-lua'
       local utils = require('fzf-lua').utils
+      local actions = require('fzf-lua').actions
 
       local function hl_validate(hl)
         return not utils.is_hl_cleared(hl) and hl or nil
@@ -61,7 +62,7 @@ require('lz.n').load {
       fzflua.setup {
         keymap = {
           fzf = {
-            ['ctrl-q'] = 'select-all+accept',
+            ['ctrl-a'] = 'select-all+accept',
           },
         },
         defaults = {
@@ -76,7 +77,6 @@ require('lz.n').load {
             theme = 'ansi',
           },
         },
-
         fzf_opts = { ['--layout'] = 'default', ['--marker'] = '+', ['--wrap'] = '' },
         hls = {
           normal = hl_validate 'TelescopeNormal',
@@ -129,6 +129,19 @@ require('lz.n').load {
           cwd_prompt = false,
           rg_opts = [[--hidden --glob=!.git/ --column --line-number --no-heading --color=never --smart-case --max-columns=4096 -e]],
           fd_opts = [[--color=never --type file --hidden --exclude .git ]],
+        },
+        actions = {
+          files = {
+            ['enter'] = actions.file_edit_or_qf,
+            ['ctrl-s'] = actions.file_split,
+            ['ctrl-v'] = actions.file_vsplit,
+            ['ctrl-t'] = actions.file_tabedit,
+            ['ctrl-q'] = actions.file_sel_to_qf,
+            ['ctrl-Q'] = actions.file_sel_to_ll,
+            ['ctrl-i'] = actions.toggle_ignore,
+            ['ctrl-h'] = actions.toggle_hidden,
+            ['ctrl-f'] = actions.toggle_follow,
+          },
         },
       }
     end,
