@@ -6,16 +6,16 @@ TERM = "xterm-256color"
 size = 17.5
 
 # font-jetbrains-mono-nerd-font
-normal.family = "JetBrainsMono Nerd Font"
+normal.family = "Geist Mono"
 normal.style = "Regular"
 
-bold.family = "JetBrainsMono Nerd Font"
+bold.family = "Geist Mono"
 bold.style = "Bold"
 
-italic.family = "JetBrainsMono Nerd Font"
+italic.family = "Geist Mono"
 italic.style = "Italic"
 
-bold_italic.family = "JetBrainsMono Nerd Font"
+bold_italic.family = "Geist Mono"
 bold_italic.style = "BoldItalic"
 
 [[keyboard.bindings]]
