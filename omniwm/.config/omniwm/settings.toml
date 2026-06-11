@@ -4,7 +4,7 @@ monitorNiriOverrides = []
 monitorOrientationOverrides = []
 
 [appearance]
-mode = "automatic"
+mode = "dark"
 
 [borders]
 enabled = true
@@ -12,9 +12,9 @@ width = 5.0
 
 [borders.color]
 alpha = 1.0
-blue = 0.9947927594184875
-green = 0.5502713322639465
-red = 0.3323717713356018
+blue = 0.47645896673202515
+green = 0.2412889003753662
+red = 0.10988164693117142
 
 [clipboard]
 historyEnabled = false
@@ -36,23 +36,22 @@ followsWindowToMonitor = false
 moveMouseToFocusedWindow = false
 
 [gaps]
-size = 8.0
+size = 20.0
 
 [gaps.outer]
 bottom = 8.0
-left = 8.0
-right = 8.0
+left = 4.0
+right = 4.0
 top = 8.0
 
 [general]
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
-hyperTrigger = "Option"
+hyperKeyHoldThresholdMilliseconds = 150
+hyperTrigger = "Left Option"
 ipcEnabled = false
-leaderKey = "Hyper+Space"
-preventSleepEnabled = true
-sequenceTimeoutMilliseconds = 800
+preventSleepEnabled = false
 updateChecksEnabled = true
 
 [gestures]
@@ -61,19 +60,18 @@ invertDirection = true
 mouseResizeModifierKey = "option"
 scrollEnabled = true
 scrollModifierKey = "optionShift"
-scrollSensitivity = 51.50000000000001
+scrollSensitivity = 5.0
 
 [mouseWarp]
-axis = "vertical"
+axis = "horizontal"
 margin = 1
-monitorOrder = ["DELL U2723QE", "Built-in Retina Display"]
+monitorOrder = []
 
 [niri]
 alwaysCenterSingleColumn = false
 centerFocusedColumn = "never"
 columnWidthPresets = [0.3333333333333333, 0.5, 0.6666666666666666]
-defaultColumnWidth = 0.5
-infiniteLoop = true
+infiniteLoop = false
 maxVisibleColumns = 2
 singleWindowAspectRatio = "none"
 
@@ -93,18 +91,18 @@ showWorkspaceName = false
 useWorkspaceId = false
 
 [workspaceBar]
-backgroundOpacity = 0.0
+backgroundOpacity = 0.1
 deduplicateAppIcons = false
 enabled = true
-height = 22.0
+height = 24.0
 hideEmptyWorkspaces = false
 labelFontSize = 12.0
 notchAware = true
-position = "overlappingMenuBar"
-reserveLayoutSpace = true
+position = "belowMenuBar"
+reserveLayoutSpace = false
 showFloatingWindows = false
 showLabels = true
-windowLevel = "normal"
+windowLevel = "floating"
 xOffset = 0.0
 yOffset = 0.0
 
@@ -395,7 +393,7 @@ binding = "Hyper+Shift+K"
 id = "move.up"
 
 [[hotkeys]]
-binding = "Hyper+Shift+L"
+binding = "Hyper+Shift+Right Arrow"
 id = "move.right"
 
 [[hotkeys]]
@@ -431,7 +429,7 @@ binding = "Unassigned"
 id = "expelWindowFromColumn"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Command+Tab"
 id = "focusMonitorNext"
 
 [[hotkeys]]
@@ -439,7 +437,7 @@ binding = "Unassigned"
 id = "focusMonitorPrevious"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Command+Grave"
 id = "focusMonitorLast"
 
 [[hotkeys]]
