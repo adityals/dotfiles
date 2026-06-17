@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 ##### Bar Appearance #####
@@ -29,7 +31,26 @@ default=(
   label.padding_left=4
   label.padding_right=4
 )
+
 sketchybar --default "${default[@]}"
+
+##### Background Styles #####
+# Reusable background styling for bar items
+bg_style=(
+  background.color=0x44ffffff
+  background.corner_radius=5
+)
+bg_workspace=(
+  "${bg_style[@]}"
+  background.height=20
+  background.drawing=off
+)
+bg_item=(
+  "${bg_style[@]}"
+  background.height=24
+  background.padding_left=8
+  background.padding_right=8
+)
 
 ##### Adding Aerospace Workspace #####
 # https://nikitabobko.github.io/AeroSpace/goodies#show-aerospace-workspaces-in-sketchybar
@@ -38,11 +59,7 @@ sketchybar --add event aerospace_workspace_change
 for sid in $(aerospace list-workspaces --all); do
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \
-        --set space.$sid \
-        background.color=0x44ffffff \
-        background.corner_radius=5 \
-        background.height=20 \
-        background.drawing=off \
+        --set space.$sid "${bg_workspace[@]}" \
         label="$sid" \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
@@ -54,11 +71,7 @@ done
 
 sketchybar --add item front_app left \
            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-                      background.color=0x44ffffff \
-                      background.corner_radius=5 \
-                      background.height=24 \
-                      background.padding_left=8 \
-                      background.padding_right=8 \
+           "${bg_item[@]}" \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
@@ -73,27 +86,12 @@ sketchybar --add item front_app left \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-           --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
-                      background.color=0x44ffffff \
-                      background.corner_radius=5 \
-                      background.height=24 \
-                      background.padding_left=8 \
-                      background.padding_right=8 \
+           --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" "${bg_item[@]}" \
            --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
-                      background.color=0x44ffffff \
-                      background.corner_radius=5 \
-                      background.height=24 \
-                      background.padding_left=8 \
-                      background.padding_right=8 \
+           --set volume script="$PLUGIN_DIR/volume.sh" "${bg_item[@]}" \
            --subscribe volume volume_change \
            --add item battery right \
-           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-                      background.color=0x44ffffff \
-                      background.corner_radius=5 \
-                      background.height=24 \
-                      background.padding_left=8 \
-                      background.padding_right=8 \
+           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" "${bg_item[@]}" \
            --subscribe battery system_woke power_source_change
 
 ##### Force all scripts to run the first time (never do this in a script) #####
