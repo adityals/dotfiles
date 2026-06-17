@@ -1,8 +1,3 @@
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
-# For a (much) more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
-
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 ##### Bar Appearance #####
@@ -12,8 +7,8 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x6e30302d \
-    margin=200 corner_radius=8 border_width=1 border_color=0xff444444 \
+sketchybar --bar position=top height=40 blur_radius=30 color=0x00ffffff \
+    margin=200 corner_radius=8 border_width=1 border_color=0xffffffff \
     y_offset=4
 
 
@@ -57,10 +52,13 @@ done
 # We add some regular items to the left side of the bar, where
 # only the properties deviating from the current defaults need to be set
 
-sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off \
-           --add item front_app left \
+sketchybar --add item front_app left \
            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+                      background.color=0x44ffffff \
+                      background.corner_radius=5 \
+                      background.height=24 \
+                      background.padding_left=8 \
+                      background.padding_right=8 \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
@@ -75,12 +73,27 @@ sketchybar --add item chevron left \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
+           --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
+                      background.color=0x44ffffff \
+                      background.corner_radius=5 \
+                      background.height=24 \
+                      background.padding_left=8 \
+                      background.padding_right=8 \
            --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
+                      background.color=0x44ffffff \
+                      background.corner_radius=5 \
+                      background.height=24 \
+                      background.padding_left=8 \
+                      background.padding_right=8 \
            --subscribe volume volume_change \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+                      background.color=0x44ffffff \
+                      background.corner_radius=5 \
+                      background.height=24 \
+                      background.padding_left=8 \
+                      background.padding_right=8 \
            --subscribe battery system_woke power_source_change
 
 ##### Force all scripts to run the first time (never do this in a script) #####
