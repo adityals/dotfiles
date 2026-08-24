@@ -9,7 +9,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-ACCENT_COLOR=0xff1793d1
+ACCENT_COLOR=0xff979fec
 
 sketchybar --bar position=top height=47 \
     margin=200 corner_radius=15 border_width=2 border_color=$ACCENT_COLOR \
