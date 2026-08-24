@@ -2,8 +2,8 @@
 return {
   settings = {
     typescript = {
-      preferences = {
-        preferTypeOnlyAutoImports = true,
+      tsserver = {
+        maxTsServerMemory = 5120,
       },
     },
   },

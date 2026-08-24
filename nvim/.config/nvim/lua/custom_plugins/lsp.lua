@@ -21,7 +21,7 @@ mason_lsp.setup {
     'oxfmt',
     'stylua',
     'rust_analyzer',
-    'tsgo',
+    'vtsls',
     'tailwindcss',
   },
 }
@@ -42,8 +42,8 @@ vim.lsp.config('gopls', {
   settings = require('lsp_config.gopls').settings,
 })
 
-vim.lsp.config('tsgo', {
-  settings = require('lsp_config.tsgo').settings,
+vim.lsp.config('vtsls', {
+  settings = require('lsp_config.vtsls').settings,
 })
 
 vim.lsp.config('*', {
@@ -61,5 +61,5 @@ vim.lsp.enable {
   'stylua',
   'rust_analyzer',
   'tailwindcss',
-  'tsgo',
+  'vtsls',
 }
