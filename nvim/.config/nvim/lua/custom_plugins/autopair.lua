@@ -7,7 +7,9 @@ require('lz.n').load {
   'blink.pairs',
   event = 'InsertEnter',
   after = function()
-    require('blink.pairs').setup {
+    local blink_pairs = require 'blink.pairs'
+    blink_pairs.build():pwait(60000)
+    blink_pairs.setup {
       mappings = {
         enabled = true,
         cmdline = true,
