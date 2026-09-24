@@ -12,7 +12,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 ACCENT_COLOR=0xff979fec
 
 sketchybar --bar position=top height=47 \
-    margin=200 corner_radius=15 border_width=2 border_color=$ACCENT_COLOR \
+    margin=200 corner_radius=15 border_color="0x40ffffff" \
     y_offset=4
 
 
@@ -24,8 +24,8 @@ sketchybar --bar position=top height=47 \
 default=(
   padding_left=5
   padding_right=5
-  icon.font="GeistMono Nerd Font:Bold:14.0"
-  label.font="GeistMono Nerd Font:Bold:14.0"
+  icon.font="IosevkaTerm Nerd Font:Bold:14.0"
+  label.font="IosevkaTerm Nerd Font:Bold:14.0"
   icon.color=$ACCENT_COLOR
   label.color=$ACCENT_COLOR
   icon.padding_left=4
@@ -35,26 +35,6 @@ default=(
 )
 
 sketchybar --default "${default[@]}"
-
-##### Background Styles #####
-# Reusable background styling for bar items
-bg_style=(
-    background.color=0x000000
-    background.corner_radius=5
-    background.border_width=1
-    background.border_color=$ACCENT_COLOR
-)
-bg_workspace=(
-    "${bg_style[@]}"
-    background.height=20
-    background.drawing=off
-)
-bg_item=(
-    "${bg_style[@]}"
-    background.height=24
-    background.padding_left=8
-    background.padding_right=8
-)
 
 ##### Adding Aerospace Workspace #####
 # https://nikitabobko.github.io/AeroSpace/goodies#show-aerospace-workspaces-in-sketchybar
@@ -75,7 +55,6 @@ done
 
 sketchybar --add item front_app left \
            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-           "${bg_item[@]}" \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
@@ -90,12 +69,12 @@ sketchybar --add item front_app left \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-           --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" "${bg_item[@]}" \
+           --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
            --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" "${bg_item[@]}" \
+           --set volume script="$PLUGIN_DIR/volume.sh" \
            --subscribe volume volume_change \
            --add item battery right \
-           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" "${bg_item[@]}" \
+           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
 
 ##### Force all scripts to run the first time (never do this in a script) #####
