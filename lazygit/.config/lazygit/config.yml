@@ -1,4 +1,8 @@
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+git:
+  diffRenderers:
+    - colorArg: always
+      command: delta --dark --paging=never
 keybinding:
   universal:
     quit: <c-c>

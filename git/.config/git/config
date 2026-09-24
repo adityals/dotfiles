@@ -1,0 +1,20 @@
+# Shared git config (stowed to ~/.config/git/config).
+# Personal/identity settings stay in untracked ~/.gitconfig, which overrides this file.
+
+[core]
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true    # n / N jump between files in the diff
+	dark = true
+	line-numbers = true
+	side-by-side = true
+
+[merge]
+	conflictStyle = zdiff3
+
+[diff]
+	colorMoved = default

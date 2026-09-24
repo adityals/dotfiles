@@ -44,6 +44,7 @@ mode = "AppCursor"
 mods = "Command"
 
 [window]
+option_as_alt = "Both"
 decorations = "buttonless"
 opacity = 0.9
 blur = false

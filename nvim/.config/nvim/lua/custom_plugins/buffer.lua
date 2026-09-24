@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = gh 'serhez/bento.nvim', load = function() end },
+  { src = gh 'serhez/bento.nvim', version = vim.version.range '1.*', load = function() end },
 }, { confirm = false })
 
 require('lz.n').load {

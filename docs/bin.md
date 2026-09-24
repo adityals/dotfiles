@@ -11,5 +11,6 @@ Must have binaries (can install with homebrew):
 - rg
 - yazi
 - jq
+- delta (`git-delta`)
 - [g](https://github.com/voidint/g)
 - [JankyBorders](https://github.com/FelixKratz/JankyBorders)

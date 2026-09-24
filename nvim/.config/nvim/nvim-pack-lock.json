@@ -5,8 +5,9 @@
       "src": "https://github.com/otavioschwanck/arrow.nvim"
     },
     "bento.nvim": {
-      "rev": "3a944910987f552b41fce22fbb7eed0bf0a6f1eb",
-      "src": "https://github.com/serhez/bento.nvim"
+      "rev": "3b529fb1ff417fe0ab5759a712372a6a64152271",
+      "src": "https://github.com/serhez/bento.nvim",
+      "version": "1.0.0 - 2.0.0"
     },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
