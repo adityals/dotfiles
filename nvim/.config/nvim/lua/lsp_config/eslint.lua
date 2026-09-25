@@ -1,6 +1,6 @@
 ---@type vim.lsp.Config
 return {
-  cmd = { 'vscode-eslint-language-server', '--stdio', '--max-old-space-size=8192' },
+  cmd = { 'vscode-eslint-language-server', '--stdio', '--max-old-space-size=5120' },
   filetypes = {
     'javascript',
     'javascriptreact',
