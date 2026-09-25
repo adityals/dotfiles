@@ -1,16 +1,18 @@
 # bin
 
 Must have binaries (can install with homebrew):
-- nvim (0.12.2)
+
 - aerospace
-- stow
-- lazygit
-- fzf
-- fd
+- antidote
 - bat
-- rg
-- yazi
-- jq
 - delta (`git-delta`)
+- fd
+- fzf
 - [g](https://github.com/voidint/g)
 - [JankyBorders](https://github.com/FelixKratz/JankyBorders)
+- jq
+- lazygit
+- nvim v0.12.x
+- rg
+- stow
+- yazi
