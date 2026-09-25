@@ -1,0 +1,4 @@
+# antidote bundles; `antidote update` to update
+getantidote/use-omz             # must be first: sets $ZSH, deferred compinit, ZSH_THEME loading
+ohmyzsh/ohmyzsh path:lib        # history, key-bindings, completion styles, ls/dir aliases
+ohmyzsh/ohmyzsh path:plugins/git
