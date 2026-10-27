@@ -24,7 +24,17 @@ treesitter.install {
   'vim',
   'bash',
   'thrift',
+  'svelte',
+  'css',
 }
+
+-- svelte has no builtin vim syntax, so highlight via treesitter
+api.nvim_create_autocmd('FileType', {
+  pattern = 'svelte',
+  callback = function(ev)
+    vim.treesitter.start(ev.buf)
+  end,
+})
 
 api.nvim_create_autocmd('PackChanged', {
   callback = function(ev)

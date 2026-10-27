@@ -17,6 +17,12 @@ require('lz.n').load {
         javascript = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
+        svelte = {
+          lsp_format = 'prefer',
+          filter = function(client)
+            return client.name == 'svelte'
+          end,
+        },
       },
     }
   end,

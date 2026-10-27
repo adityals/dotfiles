@@ -21,6 +21,7 @@ mason_lsp.setup {
     'oxfmt',
     'stylua',
     'rust_analyzer',
+    'svelte',
     'vtsls',
     'tailwindcss',
   },
@@ -60,6 +61,7 @@ vim.lsp.enable {
   'oxfmt',
   'stylua',
   'rust_analyzer',
+  'svelte',
   'tailwindcss',
   'vtsls',
 }
