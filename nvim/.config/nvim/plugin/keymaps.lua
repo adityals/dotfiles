@@ -38,3 +38,11 @@ set('n', 'gK', function()
   local new_config = not vim.diagnostic.config().virtual_lines
   vim.diagnostic.config { virtual_lines = new_config }
 end, { desc = 'Toggle diagnostic virtual_lines' })
+
+-- vim.pack
+set('n', '<leader>pu', function()
+  vim.pack.update()
+end, { desc = '[p]ack [u]pdate (confirm)' })
+set('n', '<leader>pU', function()
+  vim.pack.update(nil, { force = true })
+end, { desc = '[p]ack [U]pdate (no confirm)' })
