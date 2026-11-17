@@ -4,6 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$HOMEBREW_PREFIX/bin:$HOME/.local/bin:$PATH
 
 # make macOS CLIs (lazygit, etc.) read ~/.config instead of ~/Library/Application Support
 export XDG_CONFIG_HOME="$HOME/.config"
+export DOCKER_HOST="unix://$XDG_CONFIG_HOME/colima/default/docker.sock"
 export EDITOR='nvim'
 
 # aliasing

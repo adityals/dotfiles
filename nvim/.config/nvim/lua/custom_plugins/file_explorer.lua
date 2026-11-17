@@ -49,6 +49,9 @@ require('lz.n').load {
       { '<leader>fb', require('fzf-lua').buffers, { desc = 'Search buffers' } },
       { '<leader>ps', require('fzf-lua').grep, { desc = 'Search patterns' } },
       { '<leader>sw', require('fzf-lua').live_grep, { desc = 'Search words live' } },
+      -- https://github.com/ibhagwan/fzf-lua/blob/main/README.md?plain=1#L874
+      { '<leader>gs', require('fzf-lua').git_status, { desc = 'Git status' } },
+      { '<leader>gb', require('fzf-lua').git_branches, { desc = 'Git branches' } },
     },
     after = function()
       local fzflua = require 'fzf-lua'
