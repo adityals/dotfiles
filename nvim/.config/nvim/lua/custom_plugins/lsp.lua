@@ -11,6 +11,7 @@ mason.setup {}
 
 local mason_lsp = require 'mason-lspconfig'
 mason_lsp.setup {
+  automatic_enable = false,
   ensure_installed = {
     'copilot',
     'cssls',
@@ -24,6 +25,8 @@ mason_lsp.setup {
     'svelte',
     'vtsls',
     'tailwindcss',
+    'ty',
+    'ruff',
   },
 }
 
@@ -57,11 +60,13 @@ vim.lsp.enable {
   'eslint',
   'gopls',
   'lua_ls',
-  'oxlint',
   'oxfmt',
-  'stylua',
+  'oxlint',
+  'ruff',
   'rust_analyzer',
+  'stylua',
   'svelte',
   'tailwindcss',
+  'ty',
   'vtsls',
 }

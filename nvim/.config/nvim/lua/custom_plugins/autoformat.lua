@@ -13,6 +13,7 @@ require('lz.n').load {
         lsp_format = 'fallback',
       },
       formatters_by_ft = {
+        python = { 'ruff_fix', 'ruff_format' },
         lua = { 'stylua' },
         javascript = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },

@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export HOMEBREW_PREFIX="/opt/homebrew"
 export PATH=$HOME/bin:/usr/local/bin:$HOMEBREW_PREFIX/bin:$HOME/.local/bin:$PATH
+export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
 
 # make macOS CLIs (lazygit, etc.) read ~/.config instead of ~/Library/Application Support
 export XDG_CONFIG_HOME="$HOME/.config"
