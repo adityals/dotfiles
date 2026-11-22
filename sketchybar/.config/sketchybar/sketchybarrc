@@ -24,8 +24,8 @@ sketchybar --bar position=top height=47 \
 default=(
   padding_left=5
   padding_right=5
-  icon.font="IosevkaTerm Nerd Font:Bold:14.0"
-  label.font="IosevkaTerm Nerd Font:Bold:14.0"
+  icon.font="JetBrainsMono Nerd Font:Bold:14.0"
+  label.font="JetBrainsMono Nerd Font:Bold:14.0"
   icon.color=$ACCENT_COLOR
   label.color=$ACCENT_COLOR
   icon.padding_left=4
